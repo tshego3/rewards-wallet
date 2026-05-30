@@ -1,0 +1,22 @@
+{
+  "name": "Rewards Wallet",
+  "short_name": "Rewards",
+  "description": "Offline-first loyalty card wallet PWA",
+  "start_url": "/rewards-wallet/",
+  "scope": "/rewards-wallet/",
+  "display": "standalone",
+  "background_color": "#131313",
+  "theme_color": "#131313",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

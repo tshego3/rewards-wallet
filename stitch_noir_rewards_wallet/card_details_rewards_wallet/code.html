@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Card Details - Rewards Wallet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(28, 28, 28, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid #2D2D2D;
+        }
+        .barcode-stripes {
+            background: repeating-linear-gradient(
+                90deg,
+                #000,
+                #000 2px,
+                #fff 2px,
+                #fff 4px,
+                #000 4px,
+                #000 5px,
+                #fff 5px,
+                #fff 8px
+            );
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#353534",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-tertiary": "#342f2d",
+                        "primary": "#ffffff",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface-tint": "#c6c6c7",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-tertiary-fixed": "#1f1b19",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed-variant": "#4b4643",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-tertiary-container": "#696360",
+                        "surface-bright": "#393939",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed-dim": "#cec5c1",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#474747",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-container": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "outline-variant": "#444748",
+                        "outline": "#8e9192",
+                        "inverse-primary": "#5d5f5f",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffffff",
+                        "on-secondary": "#303030",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-background": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "on-primary-container": "#636565",
+                        "secondary": "#c8c6c6",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-variant": "#353534",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "tertiary-fixed": "#eae1dd",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474747",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-container": "#eae1dd",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary": "#2f3131",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "container-padding": "24px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "label-xs": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-xs": ["11px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["17px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-50 flex items-center justify-between px-container-padding h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-medium text-primary">Rewards Wallet</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="active:scale-95 transition-transform hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">edit</span>
+</button>
+<button class="active:scale-95 transition-transform hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">more_vert</span>
+</button>
+</div>
+</header>
+<main class="max-w-[720px] mx-auto px-container-padding pt-8 pb-32">
+<!-- Card Visualization -->
+<section class="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
+<div class="relative w-full aspect-[1.58/1] rounded-xl overflow-hidden bg-surface-container-high p-8 flex flex-col justify-between group shadow-xl">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-transparent to-transparent opacity-10"></div>
+</div>
+<div class="flex justify-between items-start relative z-10">
+<div>
+<p class="font-label-xs text-label-xs text-on-surface-variant mb-1 uppercase tracking-widest">LOYALTY MEMBER</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Platinum Rewards</h2>
+</div>
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="relative z-10">
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-70 mb-1">PROGRAM NAME</p>
+<p class="font-body-lg text-body-lg text-primary tracking-wide">Luxe Retail Collective</p>
+</div>
+</div>
+</section>
+<!-- Scannable Barcode Section -->
+<section class="mb-12">
+<div class="bg-white rounded-xl p-8 flex flex-col items-center justify-center cursor-pointer transition-transform active:scale-[0.98] group" onclick="toggleFullScreenBarcode()">
+<div aria-label="Barcode Representation" class="w-full h-24 barcode-stripes mb-4" role="img"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-xs text-label-xs text-black/40 mb-2 font-mono">CODE 128 FORMAT</span>
+<span class="font-headline-md text-headline-md text-black tracking-[0.4em] font-mono font-bold">4829 0012 8374</span>
+</div>
+<div class="mt-4 flex items-center gap-2 text-black/60 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+<span class="font-label-xs text-label-xs">Tap to enlarge</span>
+</div>
+</div>
+</section>
+<!-- Details Grid -->
+<section class="space-y-8">
+<div class="grid grid-cols-2 gap-gutter">
+<div class="p-6 bg-surface-container rounded-lg border border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-2">Points Balance</p>
+<p class="font-headline-lg text-headline-lg text-primary">12,450</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant mt-1">Expiring in 45 days</p>
+</div>
+<div class="p-6 bg-surface-container rounded-lg border border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-2">Membership Tier</p>
+<p class="font-headline-lg text-headline-lg text-primary">Platinum</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant mt-1">Top 5% of members</p>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest px-1">Actions</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-gap">
+<button class="flex items-center justify-center gap-3 bg-primary text-black h-12 rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity active:scale-95">
+<span class="material-symbols-outlined">qr_code_2</span>
+                        Show QR Code
+                    </button>
+<button class="flex items-center justify-center gap-3 bg-secondary-container text-primary h-12 rounded-lg font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors active:scale-95">
+<span class="material-symbols-outlined">receipt_long</span>
+                        Transaction History
+                    </button>
+</div>
+<button class="w-full flex items-center justify-center gap-3 bg-transparent text-error border border-error/30 h-12 rounded-lg font-label-sm text-label-sm hover:bg-error/10 transition-colors active:scale-95">
+<span class="material-symbols-outlined">delete</span>
+                    Remove from Wallet
+                </button>
+</div>
+</section>
+</main>
+<!-- Full Screen Barcode Overlay (Hidden by Default) -->
+<div class="fixed inset-0 z-[100] glass-effect hidden flex-col items-center justify-center p-container-padding animate-in fade-in duration-300" id="barcodeOverlay">
+<button class="absolute top-6 right-6 p-4 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors" onclick="toggleFullScreenBarcode()">
+<span class="material-symbols-outlined text-primary">close</span>
+</button>
+<div class="bg-white p-12 rounded-xl w-full max-w-[600px] shadow-2xl rotate-90 md:rotate-0">
+<div class="w-full h-48 barcode-stripes mb-8"></div>
+<div class="text-center">
+<span class="font-headline-lg text-headline-lg text-black tracking-[0.5em] font-mono font-bold">4829 0012 8374</span>
+<p class="text-black/40 mt-4 font-label-sm text-label-sm">Platinum Rewards • Luxe Retail Collective</p>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Responsive Pivot) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-105 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wallet</span>
+<span class="font-label-sm text-label-sm">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</nav>
+<script>
+        function toggleFullScreenBarcode() {
+            const overlay = document.getElementById('barcodeOverlay');
+            if (overlay.classList.contains('hidden')) {
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close on escape
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const overlay = document.getElementById('barcodeOverlay');
+                if (!overlay.classList.contains('hidden')) toggleFullScreenBarcode();
+            }
+        });
+    </script>
+</body></html>

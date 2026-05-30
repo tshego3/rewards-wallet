@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rewards Wallet - Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#eae1dd",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-fixed-dim": "#cec5c1",
+                    "outline-variant": "#444748",
+                    "on-error": "#690005",
+                    "on-surface": "#e5e2e1",
+                    "surface-variant": "#353534",
+                    "error-container": "#93000a",
+                    "primary-container": "#e2e2e2",
+                    "background": "#131313",
+                    "secondary-fixed": "#e4e2e1",
+                    "on-tertiary-container": "#696360",
+                    "on-background": "#e5e2e1",
+                    "on-primary-container": "#636565",
+                    "surface-container": "#201f1f",
+                    "primary": "#ffffff",
+                    "on-tertiary-fixed": "#1f1b19",
+                    "surface-container-lowest": "#0e0e0e",
+                    "inverse-on-surface": "#313030",
+                    "surface-bright": "#393939",
+                    "surface-tint": "#c6c6c7",
+                    "surface-container-low": "#1c1b1b",
+                    "outline": "#8e9192",
+                    "tertiary-fixed": "#eae1dd",
+                    "secondary": "#c8c6c6",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-primary-fixed": "#1a1c1c",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-container": "#b6b5b4",
+                    "on-secondary": "#303030",
+                    "error": "#ffb4ab",
+                    "on-tertiary": "#342f2d",
+                    "tertiary": "#ffffff",
+                    "primary-fixed-dim": "#c6c6c7",
+                    "primary-fixed": "#e2e2e2",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "surface": "#131313",
+                    "on-tertiary-fixed-variant": "#4b4643",
+                    "on-primary": "#2f3131",
+                    "on-secondary-fixed-variant": "#474747",
+                    "on-primary-fixed-variant": "#454747",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#474747",
+                    "on-surface-variant": "#c4c7c8",
+                    "inverse-primary": "#5d5f5f",
+                    "surface-dim": "#131313",
+                    "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap": "12px",
+                    "section-gap": "48px",
+                    "unit": "4px",
+                    "gutter": "16px",
+                    "container-padding": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "label-xs": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-xs": ["11px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-lg": ["17px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .keyboard-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(28, 27, 27, 0.85);
+        }
+        .glass-panel {
+            background: rgba(28, 27, 27, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid #474747;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex items-center justify-center min-h-screen">
+<!-- Mobile Viewport Simulation -->
+<div class="relative w-full max-w-md h-[844px] bg-background overflow-hidden shadow-2xl flex flex-col">
+<!-- Search Header (TopAppBar Context) -->
+<header class="z-50 px-gutter h-20 flex items-center gap-4 bg-background/80 backdrop-blur-xl">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex-1 relative group">
+<input autofocus="" class="w-full h-12 bg-surface-container-low border border-outline-variant rounded-xl px-4 text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary focus:ring-0 transition-all font-body-md text-body-md" placeholder="Search rewards, cards, or offers" type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant group-focus-within:text-primary">search</span>
+</div>
+</header>
+<!-- Search Canvas -->
+<main class="flex-1 px-gutter overflow-y-auto pb-64">
+<!-- Category Chips -->
+<section class="mt-6">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant mb-4 tracking-wider uppercase">Categories</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 bg-secondary-container rounded-full flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">flight</span>
+<span class="font-label-sm text-label-sm text-on-surface">Travel</span>
+</button>
+<button class="px-4 py-2 bg-surface-container-low border border-outline-variant rounded-full flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<span class="font-label-sm text-label-sm text-on-surface">Dining</span>
+</button>
+<button class="px-4 py-2 bg-surface-container-low border border-outline-variant rounded-full flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span class="font-label-sm text-label-sm text-on-surface">Retail</span>
+</button>
+<button class="px-4 py-2 bg-surface-container-low border border-outline-variant rounded-full flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">hotel</span>
+<span class="font-label-sm text-label-sm text-on-surface">Hotels</span>
+</button>
+</div>
+</section>
+<!-- Recent Searches -->
+<section class="mt-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Recent Searches</h3>
+<button class="font-label-sm text-label-sm text-primary/60 hover:text-primary transition-colors">Clear All</button>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between p-4 bg-surface-container-low/40 rounded-xl hover:bg-surface-container-high transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">history</span>
+<span class="font-body-md text-body-md text-on-surface">Amex Gold Membership</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">north_west</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low/40 rounded-xl hover:bg-surface-container-high transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">history</span>
+<span class="font-body-md text-body-md text-on-surface">Starbucks Rewards Balance</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">north_west</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low/40 rounded-xl hover:bg-surface-container-high transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">history</span>
+<span class="font-body-md text-body-md text-on-surface">Delta Skymiles Transfer</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">north_west</span>
+</div>
+</div>
+</section>
+<!-- Suggested for You (Bento Style) -->
+<section class="mt-10">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant mb-4 tracking-wider uppercase">Suggested</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 relative h-32 rounded-2xl overflow-hidden group cursor-pointer border border-outline-variant">
+<img alt="Luxury Retail Reward" class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 transition-transform duration-500" data-alt="A cinematic close-up of a high-performance running shoe captured in a dark, moody studio environment. The lighting is focused and dramatic, highlighting the sleek textures of the material against a deep charcoal background. The overall aesthetic is minimalist and premium, aligning with a luxury sports brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9YXsNhejc7JmLb8GsY-u64WEbYNLEswpVNPrMU8OtMVYo_jEWGV9rgNuv6hFE68L82PJpI8Ht6cq5CoJNucOwPQo4ug5sclVp-8AOgVEj0_965LEGDTkt7AkTjjLaIrsAyNioY0K8UmzIvA5N1MQL2D9-2KhgHCZkqEP2eubrXk1znG27SLueFdpqueBaOfE1ckzCDsmCr8qMfEGmPOYe8jnvQ_WwU1jqgUzrYEaLfnKFAOYMG3g1vxOjKKp0d9p0ePIe8kyosSc"/>
+<div class="absolute inset-0 p-4 flex flex-col justify-end">
+<span class="font-label-xs text-label-xs text-primary/70 uppercase mb-1">Exclusive Offer</span>
+<h4 class="font-headline-md text-headline-md text-primary">5x Points at Nike</h4>
+</div>
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant rounded-2xl p-4 flex flex-col justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl">local_cafe</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Daily Brew</h4>
+<p class="font-label-xs text-label-xs text-on-surface-variant">200 pts available</p>
+</div>
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant rounded-2xl p-4 flex flex-col justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl">electric_bolt</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Fuel Boost</h4>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Nearby stations</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Simulated Mobile Keyboard -->
+<div class="absolute bottom-0 left-0 w-full keyboard-blur border-t border-outline-variant h-[300px] flex flex-col p-2 gap-2 z-[60]">
+<!-- Keyboard Header/Suggestions -->
+<div class="flex justify-around items-center h-12 border-b border-outline-variant/30 px-2 mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Chase</span>
+<span class="font-body-md text-body-md text-on-surface">Membership</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Points</span>
+</div>
+<!-- Keyboard Rows (Stylized) -->
+<div class="flex flex-col gap-2 h-full">
+<div class="flex justify-center gap-1.5 h-11">
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">Q</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">W</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">E</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">R</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">T</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">Y</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">U</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">I</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">O</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">P</div>
+</div>
+<div class="flex justify-center gap-1.5 h-11 px-4">
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">A</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">S</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">D</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">F</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">G</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">H</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">J</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">K</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">L</div>
+</div>
+<div class="flex justify-center gap-1.5 h-11">
+<div class="w-12 bg-outline-variant/30 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">shift</span></div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">Z</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">X</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">C</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">V</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">B</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">N</div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-lg text-body-lg">M</div>
+<div class="w-12 bg-outline-variant/30 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">backspace</span></div>
+</div>
+<div class="flex justify-center gap-1.5 h-11">
+<div class="w-12 bg-outline-variant/30 rounded-lg flex items-center justify-center font-label-sm text-label-sm">123</div>
+<div class="w-10 bg-outline-variant/30 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">language</span></div>
+<div class="flex-1 bg-surface-container-highest rounded-lg flex items-center justify-center font-body-md text-body-md">space</div>
+<div class="w-20 bg-primary text-background rounded-lg flex items-center justify-center font-body-md text-body-md font-bold">Search</div>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="w-32 h-1.5 bg-on-surface-variant/20 rounded-full mx-auto mt-2"></div>
+</div>
+</div>
+<script>
+        // Simple micro-interaction for input clearing
+        const input = document.querySelector('input');
+        const searchIcon = document.querySelector('.group-focus-within\\:text-primary');
+
+        input.addEventListener('input', (e) => {
+            if (e.target.value.length > 0) {
+                searchIcon.textContent = 'close';
+                searchIcon.style.cursor = 'pointer';
+            } else {
+                searchIcon.textContent = 'search';
+                searchIcon.style.cursor = 'default';
+            }
+        });
+
+        searchIcon.addEventListener('click', () => {
+            if (searchIcon.textContent === 'close') {
+                input.value = '';
+                searchIcon.textContent = 'search';
+                input.focus();
+            }
+        });
+
+        // Atmospheric parallax on scroll
+        const main = document.querySelector('main');
+        main.addEventListener('scroll', () => {
+            const scrolled = main.scrollTop;
+            const heroImage = document.querySelector('img');
+            if (heroImage) {
+                heroImage.style.transform = `scale(${1 + scrolled * 0.0005}) translateY(${scrolled * 0.2}px)`;
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rewards Wallet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#353534",
+                    "on-secondary-container": "#b6b5b4",
+                    "on-tertiary": "#342f2d",
+                    "primary": "#ffffff",
+                    "on-primary-fixed-variant": "#454747",
+                    "surface-tint": "#c6c6c7",
+                    "secondary-fixed": "#e4e2e1",
+                    "on-tertiary-fixed": "#1f1b19",
+                    "surface-dim": "#131313",
+                    "on-tertiary-fixed-variant": "#4b4643",
+                    "on-surface-variant": "#c4c7c8",
+                    "on-tertiary-container": "#696360",
+                    "surface-bright": "#393939",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface": "#131313",
+                    "primary-fixed-dim": "#c6c6c7",
+                    "tertiary-fixed-dim": "#cec5c1",
+                    "surface-container": "#201f1f",
+                    "secondary-container": "#474747",
+                    "primary-fixed": "#e2e2e2",
+                    "surface-container-high": "#2a2a2a",
+                    "primary-container": "#e2e2e2",
+                    "error-container": "#93000a",
+                    "outline-variant": "#444748",
+                    "outline": "#8e9192",
+                    "inverse-primary": "#5d5f5f",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ffffff",
+                    "on-secondary": "#303030",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-background": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "on-primary-container": "#636565",
+                    "secondary": "#c8c6c6",
+                    "on-primary-fixed": "#1a1c1c",
+                    "surface-variant": "#353534",
+                    "on-error-container": "#ffdad6",
+                    "background": "#131313",
+                    "tertiary-fixed": "#eae1dd",
+                    "on-surface": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#474747",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-container": "#eae1dd",
+                    "surface-container-low": "#1c1b1b",
+                    "on-primary": "#2f3131",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "48px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "unit": "4px",
+                    "stack-gap": "12px"
+            },
+            "fontFamily": {
+                    "label-xs": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-xs": ["11px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["17px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121212;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(28, 28, 28, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid #2D2D2D;
+        }
+        .card-surface {
+            background-color: #1C1C1C;
+            border: 1px solid #2D2D2D;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-50 bg-surface h-16 flex items-center justify-between px-container-padding">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform">arrow_back</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Rewards Wallet</h1>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:scale-95 transition-transform">more_vert</span>
+</header>
+<main class="max-w-2xl mx-auto pb-32">
+<!-- Category Filter Chips -->
+<section class="py-4 overflow-x-auto hide-scrollbar flex gap-3 px-container-padding">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-4 py-2 rounded-full whitespace-nowrap transition-all">All Cards</button>
+<button class="bg-secondary-container text-on-surface-variant font-label-sm text-label-sm px-4 py-2 rounded-full whitespace-nowrap hover:bg-surface-container-highest transition-all">Shopping</button>
+<button class="bg-secondary-container text-on-surface-variant font-label-sm text-label-sm px-4 py-2 rounded-full whitespace-nowrap hover:bg-surface-container-highest transition-all">Dining</button>
+<button class="bg-secondary-container text-on-surface-variant font-label-sm text-label-sm px-4 py-2 rounded-full whitespace-nowrap hover:bg-surface-container-highest transition-all">Travel</button>
+<button class="bg-secondary-container text-on-surface-variant font-label-sm text-label-sm px-4 py-2 rounded-full whitespace-nowrap hover:bg-surface-container-highest transition-all">Groceries</button>
+<button class="bg-secondary-container text-on-surface-variant font-label-sm text-label-sm px-4 py-2 rounded-full whitespace-nowrap hover:bg-surface-container-highest transition-all">Entertainment</button>
+</section>
+<!-- Loyalty Cards Grid (Single Column) -->
+<section class="flex flex-col gap-4 px-container-padding">
+<!-- Card 1 -->
+<div class="card-surface p-6 rounded-xl flex items-center justify-between group hover:border-outline-variant transition-all cursor-pointer">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A macro photograph of high-end coffee beans scattered on a black marble surface. The lighting is dramatic and moody, utilizing deep shadows and crisp white highlights. The composition is minimalist and architectural, reflecting a premium boutique aesthetic with monochromatic tones and a single splash of deep espresso brown." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7poC_yfidawhsq6L7PEs0CKIZ-l4XiZWeDazRryttoPNLF8F24M7lyYGJ0ciqB4hO9wZKSgU4qJRIxowqjwATuTj6alAjYKE6O8DAfIaPt8sJLgAwnUJlJMMhR63EVwk_kSbEqebqPzB0PAoIVmUA-W24OWQmJkuG3Cy5xaDWIE-8hDMLcvGYvubFBwwI3G0sy1vNWgqneYTNMUOFQ27vuSGJPVB0MzunKqf0ZVRumag-srCAG03lYr8_cZo6pgrNO-QWCoFtA8Q"/>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Ether Coffee</h2>
+<span class="font-label-xs text-label-xs bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Dining</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-lg text-headline-lg text-primary">1,450</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">pts</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="card-surface p-6 rounded-xl flex items-center justify-between group hover:border-outline-variant transition-all cursor-pointer">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A clean, minimalist shot of architectural textures featuring brushed aluminum and dark gray concrete. The lighting is soft and diffuse, highlighting the sleek industrial design of a modern retail space. The color palette is strictly monochromatic, ranging from deep charcoal to bright silver, conveying a sense of premium precision and high-end digital hygiene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7RTB24SzCnl3KgTd4QhK-es7tRgP9TYXOLculMBUf2H403FATqyY2tSk6JzA8GpNGZmsPrQ1CfDW3ZgD3_7zc-ZeFVyrDomY2aNkZC5LjF0qQj9rIQ01THPftb-nHNvQ8UYsBxjrdXVWBjbQLb10TshsNIlcuCSSkQ_dqY1d_0YihnbrnucZEsVrICA3tXy1bVMPFbUfVyKLD4s6onJ6n7gr_sGSe3Mf7YJtZsKODXqQKEumG767eU6jzL7WVtsiA1rqvaC26YWU"/>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Aura Fashion</h2>
+<span class="font-label-xs text-label-xs bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Shopping</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-lg text-headline-lg text-primary">820</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">pts</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="card-surface p-6 rounded-xl flex items-center justify-between group hover:border-outline-variant transition-all cursor-pointer">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="An abstract visualization of digital data flowing through translucent glass layers. The scene features soft background blurs and sharp geometric edges in a dark charcoal environment. Cool white light streaks across the surface, creating a sophisticated glassmorphism effect. The overall mood is calm, tech-focused, and incredibly modern, using a limited slate gray color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmVuxW2Q-YjmMoytPz_laok7ksnWApMB22j5XMh836Ij9BstRnglgCg_qpjalTJUo6_ZyErKkKNVmSLBiV6LuLSx70M5eLPJ7ow5yxL3j24JYOnrrFUzi5GKJ_-vrPIbJWoFuro2WX_I2-nIWAd9eY_AzZFpOybamsOPjv2nI6gcFcTRCcZ1FPv04k02fCcoSEWf4_VSHvm0_JEVVw5CkebWP9QU8uyAkLsRGURtkVcfBNgMicLtWJUiV7p5grD3m8IfAT5SS34IQ"/>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Global Miles</h2>
+<span class="font-label-xs text-label-xs bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Travel</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-lg text-headline-lg text-primary">42,900</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">pts</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="card-surface p-6 rounded-xl flex items-center justify-between group hover:border-outline-variant transition-all cursor-pointer">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A top-down architectural view of a minimalist kitchen counter made of black obsidian. Subtle glints of white light reflect off the polished edges, highlighting a single sprig of rosemary in a crystal glass. The image follows a strict dark-mode aesthetic with high-density detail and a quiet, luxury-focused atmosphere that emphasizes quality and intentionality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOAb25cyihPRkeNbpHtXhASsuGWP94SeYH6hVeVGrbajx0nFAZev-bJC7nEEo25KqPN0-HX3BJOdMh3yuTJx84iTSCdLJMA48FDSV3zUcs1qsFLa0tKXAjWoQXfG97Lj4_IEK7KqbV_5K_Y8BgbwBSErzQVGYsBEWTfT_gKTOIpirsBQZLftNxXfj6V7AX5QRuE9wccVqm_X3WKuIn2wMbePpP_aBrZa7zIUrlFJVdVtsryhALRAhjO_AVuTrdiNL5KH2H_8ky1Ls"/>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Verdant Grocer</h2>
+<span class="font-label-xs text-label-xs bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Groceries</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-lg text-headline-lg text-primary">315</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">pts</p>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-2xl z-50 hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container flex justify-around items-center px-4 py-3 h-20">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-6 py-2 scale-105 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-weight="fill">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest rounded-full px-6 py-2 transition-all" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest rounded-full px-6 py-2 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm mt-1">Settings</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for filter chips
+        const chips = document.querySelectorAll('section button');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary');
+                    c.classList.add('bg-secondary-container', 'text-on-surface-variant');
+                });
+                chip.classList.remove('bg-secondary-container', 'text-on-surface-variant');
+                chip.classList.add('bg-primary', 'text-on-primary');
+            });
+        });
+
+        // Atmospheric Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('glass-panel');
+            } else {
+                header.classList.remove('glass-panel');
+            }
+        });
+    </script>
+</body></html>

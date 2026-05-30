@@ -1,0 +1,294 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#353534",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-tertiary": "#342f2d",
+                        "primary": "#ffffff",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface-tint": "#c6c6c7",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-tertiary-fixed": "#1f1b19",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed-variant": "#4b4643",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-tertiary-container": "#696360",
+                        "surface-bright": "#393939",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed-dim": "#cec5c1",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#474747",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-container": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "outline-variant": "#444748",
+                        "outline": "#8e9192",
+                        "inverse-primary": "#5d5f5f",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffffff",
+                        "on-secondary": "#303030",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-background": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "on-primary-container": "#636565",
+                        "secondary": "#c8c6c6",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-variant": "#353534",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "tertiary-fixed": "#eae1dd",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474747",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-container": "#eae1dd",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary": "#2f3131",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "container-padding": "24px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "label-xs": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-xs": ["11px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["17px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(28, 28, 28, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid #2D2D2D;
+        }
+        body {
+            background-color: #121212;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D2D2D;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark bg-background min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface w-full top-0 sticky z-40">
+<div class="flex items-center justify-between px-container-padding h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-primary dark:text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary">Rewards Wallet</h1>
+</div>
+<button class="active:scale-95 transition-transform text-primary dark:text-primary">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<main class="max-w-[720px] mx-auto px-container-padding pb-32">
+<!-- Search Input Section -->
+<div class="mt-4 mb-8">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input autofocus="" class="w-full h-14 pl-12 pr-4 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-outline focus:ring-0 transition-all font-body-md text-body-md" placeholder="Search cards or categories..." type="text"/>
+</div>
+</div>
+<!-- Categories (Chips) -->
+<div class="mb-8 overflow-x-auto no-scrollbar flex gap-2">
+<div class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full font-label-xs text-label-xs whitespace-nowrap cursor-pointer hover:bg-surface-container-highest transition-colors">All Cards</div>
+<div class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full font-label-xs text-label-xs whitespace-nowrap cursor-pointer hover:bg-surface-container-highest transition-colors">Travel</div>
+<div class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full font-label-xs text-label-xs whitespace-nowrap cursor-pointer hover:bg-surface-container-highest transition-colors">Dining</div>
+<div class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full font-label-xs text-label-xs whitespace-nowrap cursor-pointer hover:bg-surface-container-highest transition-colors">Retail</div>
+<div class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full font-label-xs text-label-xs whitespace-nowrap cursor-pointer hover:bg-surface-container-highest transition-colors">Entertainment</div>
+</div>
+<!-- Results List -->
+<div class="space-y-4">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mb-4">Recent Results</h2>
+<!-- Result Item 1 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="A clean, minimalist logo of a modern coffee brand presented on a dark grey background. The lighting is focused and dramatic, highlighting the sleek curves of the abstract emblem. The overall color palette is restricted to monochrome tones of slate and charcoal, creating a high-end, executive aesthetic for a loyalty card preview." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsy93wpN0Q8PBn2ztE2jgVh865K8tBEs0_p2Of_Ly3n5fwns_6neSBlk9ZLg0ooQsJoRmGICnXfSAd5MUclK6Y8Wq62NA3E5sRRUUy_jnFGkpbXreE32FhbVfgFmiPB2JxgnI_EyvVaUCe49QpfuKs72Sj0PwT0lzGapKnyixDGBNfR__wHREQrsmmhuoUHr7bgoSE7l8CoUIPOzkeoPRtS8rlTEpAxmxmP239511Kee_XZWInmsWdIhiel5Z7FiDNqr2xCGme5Bw"/>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-primary">Blue Bottle Coffee</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Retail &amp; Dining</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-primary">2,450</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Points</div>
+</div>
+</div>
+<!-- Result Item 2 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="A macro shot of a sleek aviation logo etched onto a brushed titanium surface. The lighting is cool and diffused, emphasizing the industrial textures and the precision of the design. The palette consists of deep metallic greys and stark whites, reflecting a premium airline loyalty program interface. The mood is sophisticated and travel-oriented." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlRTKnK_lJX9ZN7ON3w-Qz1jeCUrpRpSyjjGkED-f6SJH7G6bDgoi6S2tcv9cfMvnSGfoTwydXy4d4dLEYB0BBnYrMUTq4Jv8SxBN8IZEatgtEPPVUcBfg9FeT6DHdLPLElI8Zb4vRYI-gi7a0B9xzt5CmqG2wOjI1pWgoMwqUDsWQEef-nsuWMtOoD3xTQErP9MFE-6eZi_19X2UVSVBdUPIhNUbqnxBMY3j54YjNOf2jI22O19t5Jth-v3a_kL9Nti_2OWasSdU"/>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-primary">Delta SkyMiles</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Travel</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-primary">48,200</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Miles</div>
+</div>
+</div>
+<!-- Result Item 3 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="A stylized geometric graphic representing a high-end luxury fashion brand logo. The image uses a high-contrast black and white color scheme with sharp edges and clean lines. The lighting is flat and modern, avoiding shadows to maintain the interface's minimalist architectural style. It evokes a sense of exclusivity and digital hygiene for a rewards wallet card." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHt94FtkCBX7gwWMzyxXbrfG_2tIT-x4boIO0RnsOxyCcHHZcGBTSLmfLnPt5x1OhOTjBVi_ffWKtLso7q_uzpBjgeWc9WKUAWYT5cUrJK3xHlWT4mOpWSRjPOIRqxTGkxCeSTCPibkg5fwoW2zlgN-ZwaOgXmQK_FXhZqRy5-KhM353Ue3O3QnRJA6ChdLGwIOLZ3GPELdUJCQqHAYCTZ2rZYI4pyii7fxi6mUcXAydr5gZMDdXxqWg-r0hubJHJni1qiwYun8UE"/>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-primary">Nordstrom Rack</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Retail</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-primary">1,120</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Notes</div>
+</div>
+</div>
+<!-- Result Item 4 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="A minimalist tech logo featuring a simple, bold circle in a monochromatic palette of dark grey and off-white. The lighting is clinical and uniform, emphasizing the focus on information density and digital hygiene. The style is contemporary and AI-influenced, fitting perfectly within a charcoal-colored mobile application environment for card identification." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfzXPtmfqpd95K2X6NGK5TOJeYpZgwLQX0WZLQVvZ7E3BWfO_iIHKRxWKD8Tp8VSkXIaj4sB-f1pMNrpOoOmtTrMuYyj_aYZu7HaR5f8r8Jt8NoNiBMfBPJeJb6Zhzso01xKjGJumFIGmHd1uRu99t_DN8FGq59y6cjCVJ7VeRglijDLv7URPwMYEO2HX0j9YSLEqd0wC328TswaVz3_jLkqCY_grHi_gOq5pBuW9AQcPiSCNvRL8HbZ-AIxdw7qu0nmRf2AQQWac"/>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-primary">Apple Store</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Technology</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-primary">850</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Credits</div>
+</div>
+</div>
+</div>
+<!-- Suggestions -->
+<div class="mt-12">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mb-4">Quick Links</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-6 bg-surface-container border border-outline-variant rounded-xl flex flex-col gap-2 hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary">qr_code_scanner</span>
+<span class="font-body-md text-body-md font-medium">Scan Card</span>
+</div>
+<div class="p-6 bg-surface-container border border-outline-variant rounded-xl flex flex-col gap-2 hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary">add_card</span>
+<span class="font-body-md text-body-md font-medium">Add New</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container dark:bg-surface-container">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant cursor-pointer hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-all duration-200">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<!-- Search (Active) -->
+<div class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-container text-on-secondary-container dark:text-on-secondary-container rounded-full px-4 py-1 scale-105 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</div>
+<!-- Settings -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant cursor-pointer hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-all duration-200">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for search input
+        const input = document.querySelector('input');
+        const results = document.querySelectorAll('.space-y-4 > div[class*="flex"]');
+        
+        input.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            results.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(term)) {
+                    item.style.display = 'flex';
+                    item.style.opacity = '1';
+                } else {
+                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                }
+            });
+        });
+
+        // Add visual feedback for tab switching (mock)
+        const tabs = document.querySelectorAll('nav > div');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.className = "flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant cursor-pointer hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-all duration-200";
+                    const icon = t.querySelector('.material-symbols-outlined');
+                    if(icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                tab.className = "flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-container text-on-secondary-container dark:text-on-secondary-container rounded-full px-4 py-1 scale-105 transition-all duration-200 cursor-pointer";
+                const activeIcon = tab.querySelector('.material-symbols-outlined');
+                if(activeIcon) activeIcon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Rewards Card</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .glass-panel {
+            background: rgba(28, 28, 28, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid #2D2D2D;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2D2D2D;
+            border-radius: 10px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#353534",
+                      "on-secondary-container": "#b6b5b4",
+                      "on-tertiary": "#342f2d",
+                      "primary": "#ffffff",
+                      "on-primary-fixed-variant": "#454747",
+                      "surface-tint": "#c6c6c7",
+                      "secondary-fixed": "#e4e2e1",
+                      "on-tertiary-fixed": "#1f1b19",
+                      "surface-dim": "#131313",
+                      "on-tertiary-fixed-variant": "#4b4643",
+                      "on-surface-variant": "#c4c7c8",
+                      "on-tertiary-container": "#696360",
+                      "surface-bright": "#393939",
+                      "surface-container-lowest": "#0e0e0e",
+                      "surface": "#131313",
+                      "primary-fixed-dim": "#c6c6c7",
+                      "tertiary-fixed-dim": "#cec5c1",
+                      "surface-container": "#201f1f",
+                      "secondary-container": "#474747",
+                      "primary-fixed": "#e2e2e2",
+                      "surface-container-high": "#2a2a2a",
+                      "primary-container": "#e2e2e2",
+                      "error-container": "#93000a",
+                      "outline-variant": "#444748",
+                      "outline": "#8e9192",
+                      "inverse-primary": "#5d5f5f",
+                      "error": "#ffb4ab",
+                      "tertiary": "#ffffff",
+                      "on-secondary": "#303030",
+                      "secondary-fixed-dim": "#c8c6c6",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "on-background": "#e5e2e1",
+                      "inverse-on-surface": "#313030",
+                      "on-primary-container": "#636565",
+                      "secondary": "#c8c6c6",
+                      "on-primary-fixed": "#1a1c1c",
+                      "surface-variant": "#353534",
+                      "on-error-container": "#ffdad6",
+                      "background": "#131313",
+                      "tertiary-fixed": "#eae1dd",
+                      "on-surface": "#e5e2e1",
+                      "on-secondary-fixed-variant": "#474747",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-container": "#eae1dd",
+                      "surface-container-low": "#1c1b1b",
+                      "on-primary": "#2f3131",
+                      "on-error": "#690005"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "48px",
+                      "container-padding": "24px",
+                      "gutter": "16px",
+                      "unit": "4px",
+                      "stack-gap": "12px"
+              },
+              "fontFamily": {
+                      "label-xs": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "label-xs": ["11px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-lg": ["17px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "body-md": ["15px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Header -->
+<header class="fixed top-0 w-full z-50 bg-surface flex items-center justify-between px-container-padding h-16 border-b border-transparent">
+<button class="text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors px-3 py-2 rounded-lg active:scale-95" onclick="history.back()">
+            Cancel
+        </button>
+<h1 class="font-headline-md text-headline-md font-medium text-primary">New Card</h1>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-4 py-2 rounded-lg font-semibold active:scale-95 transition-transform" onclick="validateAndSave()">
+            Save
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-12 px-container-padding max-w-md mx-auto h-screen overflow-y-auto custom-scrollbar">
+<!-- Live Card Preview -->
+<section class="mb-8">
+<div class="w-full aspect-[1.58/1] rounded-xl relative overflow-hidden transition-all duration-500 bg-surface-container-high border border-outline-variant flex flex-col justify-between p-6" id="cardPreview">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs uppercase tracking-wider opacity-60" id="previewProgram">Program Name</span>
+<span class="font-headline-md text-headline-md mt-1" id="previewName">Untitled Card</span>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">wallet</span>
+</div>
+<div class="mt-auto">
+<div class="h-8 w-48 bg-on-background/10 rounded flex items-center justify-center overflow-hidden">
+<div class="font-mono text-label-xs opacity-40" id="previewBarcode">0000 0000 0000</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Form Fields -->
+<form class="space-y-6" id="addCardForm" onsubmit="event.preventDefault()">
+<!-- Card Name -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="card_name">Card Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md focus:border-outline focus:ring-0 transition-colors placeholder:text-on-surface-variant/30 text-on-surface" id="card_name" oninput="updatePreview()" placeholder="e.g. Weekly Groceries" type="text"/>
+</div>
+<!-- Program/Store Dropdown -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="program">Program / Store</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md focus:border-outline focus:ring-0 transition-colors text-on-surface" id="program" onchange="updatePreview()">
+<option disabled="" selected="" value="">Select a program</option>
+<option value="Starbucks">Starbucks</option>
+<option value="Sephora">Sephora</option>
+<option value="Whole Foods">Whole Foods</option>
+<option value="Target">Target</option>
+<option value="CVS Pharmacy">CVS Pharmacy</option>
+<option value="Custom">Other...</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Barcode Number with Scan -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="barcode">Barcode Number</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg pl-4 pr-12 py-3 font-body-md text-body-md focus:border-outline focus:ring-0 transition-colors placeholder:text-on-surface-variant/30 text-on-surface" id="barcode" oninput="updatePreview()" placeholder="Scan or enter manually" type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-on-surface-variant hover:text-primary transition-colors active:scale-90" title="Scan Barcode" type="button">
+<span class="material-symbols-outlined">barcode_scanner</span>
+</button>
+</div>
+</div>
+<!-- Category Chips -->
+<div class="space-y-3">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Category</label>
+<div class="flex flex-wrap gap-2">
+<button class="chip active-chip bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full font-label-xs text-label-xs transition-all border border-transparent" onclick="selectChip(this)" type="button">Shopping</button>
+<button class="chip bg-surface-container-low text-on-surface-variant px-4 py-1.5 rounded-full font-label-xs text-label-xs transition-all border border-outline-variant" onclick="selectChip(this)" type="button">Travel</button>
+<button class="chip bg-surface-container-low text-on-surface-variant px-4 py-1.5 rounded-full font-label-xs text-label-xs transition-all border border-outline-variant" onclick="selectChip(this)" type="button">Dining</button>
+<button class="chip bg-surface-container-low text-on-surface-variant px-4 py-1.5 rounded-full font-label-xs text-label-xs transition-all border border-outline-variant" onclick="selectChip(this)" type="button">Fitness</button>
+</div>
+</div>
+<!-- Color Picker -->
+<div class="space-y-3">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Card Aesthetic</label>
+<div class="grid grid-cols-6 gap-3">
+<button class="color-dot w-full aspect-square rounded-full bg-[#2D2D2D] ring-2 ring-offset-4 ring-offset-background ring-primary border border-outline-variant" onclick="changeColor('#2D2D2D', this)" type="button"></button>
+<button class="color-dot w-full aspect-square rounded-full bg-[#3D3D3D] border border-outline-variant" onclick="changeColor('#3D3D3D', this)" type="button"></button>
+<button class="color-dot w-full aspect-square rounded-full bg-[#4A4A48] border border-outline-variant" onclick="changeColor('#4A4A48', this)" type="button"></button>
+<button class="color-dot w-full aspect-square rounded-full bg-[#3E4142] border border-outline-variant" onclick="changeColor('#3E4142', this)" type="button"></button>
+<button class="color-dot w-full aspect-square rounded-full bg-[#45403D] border border-outline-variant" onclick="changeColor('#45403D', this)" type="button"></button>
+<button class="color-dot w-full aspect-square rounded-full bg-[#3C4543] border border-outline-variant" onclick="changeColor('#3C4543', this)" type="button"></button>
+</div>
+</div>
+</form>
+<!-- Illustration / Background Texture -->
+<div class="mt-12 text-center opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'wght' 100;">lock_reset</span>
+<p class="font-label-xs text-label-xs mt-4">Securely stored on device</p>
+</div>
+</main>
+<!-- Success Modal (Hidden) -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center px-container-padding" id="successModal">
+<div class="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+<div class="glass-panel w-full max-w-xs rounded-xl p-8 flex flex-col items-center text-center animate-in zoom-in-95 duration-300 relative z-10">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-background text-3xl">check_circle</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Card Added</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Your rewards card is now ready in your wallet.</p>
+<button class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-lg font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors" onclick="window.location.reload()">
+                Done
+            </button>
+</div>
+</div>
+<script>
+        function updatePreview() {
+            const name = document.getElementById('card_name').value;
+            const program = document.getElementById('program').value;
+            const barcode = document.getElementById('barcode').value;
+
+            document.getElementById('previewName').textContent = name || 'Untitled Card';
+            document.getElementById('previewProgram').textContent = program || 'Program Name';
+            document.getElementById('previewBarcode').textContent = barcode || '0000 0000 0000';
+            
+            // Add slight glow effect if form is being filled
+            if(name || barcode) {
+                document.getElementById('cardPreview').classList.add('shadow-2xl', 'shadow-white/5');
+            }
+        }
+
+        function changeColor(color, el) {
+            // Update Card Preview
+            document.getElementById('cardPreview').style.backgroundColor = color;
+            
+            // Update UI selection state
+            document.querySelectorAll('.color-dot').forEach(dot => {
+                dot.classList.remove('ring-2', 'ring-offset-4', 'ring-offset-background', 'ring-primary');
+            });
+            el.classList.add('ring-2', 'ring-offset-4', 'ring-offset-background', 'ring-primary');
+        }
+
+        function selectChip(el) {
+            document.querySelectorAll('.chip').forEach(chip => {
+                chip.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'border-transparent');
+                chip.classList.add('bg-surface-container-low', 'text-on-surface-variant', 'border-outline-variant');
+            });
+            el.classList.remove('bg-surface-container-low', 'text-on-surface-variant', 'border-outline-variant');
+            el.classList.add('bg-secondary-container', 'text-on-secondary-container', 'border-transparent');
+        }
+
+        function validateAndSave() {
+            const saveBtn = document.querySelector('header button:last-child');
+            const name = document.getElementById('card_name').value;
+            
+            if(!name) {
+                document.getElementById('card_name').classList.add('border-error');
+                return;
+            }
+
+            saveBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span>';
+            saveBtn.disabled = true;
+
+            // Artificial delay for high-end feel
+            setTimeout(() => {
+                document.getElementById('successModal').classList.remove('hidden');
+            }, 1000);
+        }
+
+        // Initialize preview
+        updatePreview();
+    </script>
+</body></html>
