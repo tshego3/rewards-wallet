@@ -180,7 +180,7 @@ export function App() {
         }}
       >
         <Group gap="sm" px="lg" mb="xl" wrap="nowrap">
-          <img src="/logo.svg" alt="" width={24} height={24} />
+          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="" width={24} height={24} />
           <Title
             order={1}
             fw={600}
