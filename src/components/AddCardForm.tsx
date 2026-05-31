@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Modal, TextInput, Select, Button, Stack, Group, ColorInput } from '@mantine/core';
+import { Modal, TextInput, Select, Button, Stack, Group, ColorSwatch, Text } from '@mantine/core';
 import { tokens } from '../theme';
 import type { CardFormData, CardCategory, BarcodeFormat } from '../types';
 
@@ -129,13 +129,24 @@ export function AddCardForm({ opened, onClose, onSave, initialData, title }: Add
             onChange={(val) => setCategory((val as CardCategory) || 'retail')}
             styles={inputStyles}
           />
-          <ColorInput
-            label="Card Color"
-            value={color}
-            onChange={setColor}
-            swatches={DEFAULT_COLORS}
-            styles={inputStyles}
-          />
+          <div>
+            <Text size="sm" style={{ color: tokens.colors.secondaryText, marginBottom: '4px' }}>Card Color</Text>
+            <Group gap="xs">
+              {DEFAULT_COLORS.map((c) => (
+                <ColorSwatch
+                  key={c}
+                  color={c}
+                  onClick={() => setColor(c)}
+                  style={{
+                    cursor: 'pointer',
+                    outline: color === c ? `2px solid ${tokens.colors.accent}` : 'none',
+                    outlineOffset: '2px',
+                  }}
+                  size={32}
+                />
+              ))}
+            </Group>
+          </div>
           <TextInput
             label="Points"
             type="number"
