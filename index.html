@@ -6,16 +6,20 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="logo.svg" />
     <link rel="apple-touch-icon" href="/rewards-wallet/icons/icon-192x192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Offline-first loyalty card wallet. Store, manage, and scan your rewards cards from your phone." />
     <meta name="theme-color" content="#131313" />
     <link rel="manifest" href="/rewards-wallet/manifest.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/rewards-wallet/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin />
     <title>Rewards Wallet</title>
-    <script type="module" crossorigin src="/rewards-wallet/assets/main-Bnbivtsr.js"></script>
-    <link rel="stylesheet" crossorigin href="/rewards-wallet/assets/main-D872Og5C.css">
+    <style>
+      body{margin:0;background:#131313;color:#F5F5F5;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif}
+      #app{min-height:100dvh}
+    </style>
+    <script type="module" crossorigin src="/rewards-wallet/assets/main-ASgUd8fk.js"></script>
+    <link rel="modulepreload" crossorigin href="/rewards-wallet/assets/framework-BdsqZdGi.js">
+    <link rel="stylesheet" crossorigin href="/rewards-wallet/assets/main-DUut7x-I.css" media="print" onload="this.media='all'">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app"><header style="padding:24px 16px"><h1 style="font-size:24px;font-weight:600;margin:0;letter-spacing:-0.02em">Rewards Wallet</h1><p style="color:#999;margin:8px 0 0;font-size:14px">Your loyalty cards</p></header></div>
   </body>
 </html>
