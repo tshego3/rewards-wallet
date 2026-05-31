@@ -1,13 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { Box, UnstyledButton, Text, Stack, Title, Group } from '@mantine/core';
 import { IconHome, IconSearch, IconSettings } from '@tabler/icons-react';
 import { useRouter } from './router';
 import { navigate } from './router';
-import { Dashboard } from './screens/Dashboard';
-import { CardDetails } from './screens/CardDetails';
-import { Search } from './screens/Search';
-import { Settings } from './screens/Settings';
 import { tokens } from './theme';
 import type { Screen } from './types';
+
+const Dashboard = lazy(() => import('./screens/Dashboard').then(m => ({ default: m.Dashboard })));
+const CardDetails = lazy(() => import('./screens/CardDetails').then(m => ({ default: m.CardDetails })));
+const Search = lazy(() => import('./screens/Search').then(m => ({ default: m.Search })));
+const Settings = lazy(() => import('./screens/Settings').then(m => ({ default: m.Settings })));
 
 function AppContent() {
   const route = useRouter();
@@ -134,7 +136,9 @@ export function App() {
         ml={{ base: 0, md: 240 }}
         style={{ minHeight: '100dvh' }}
       >
-        <AppContent />
+        <Suspense fallback={null}>
+          <AppContent />
+        </Suspense>
       </Box>
 
       {/* Bottom navigation - mobile only */}

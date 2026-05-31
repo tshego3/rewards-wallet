@@ -93,7 +93,7 @@ export function FullScreenBarcode({ value, format, cardName, onClose }: FullScre
       >
         {cardName}
       </Text>
-      <Text size="sm" style={{ color: '#666666', textAlign: 'center', marginTop: 4 }}>
+      <Text size="sm" style={{ color: tokens.colors.secondaryText, textAlign: 'center', marginTop: 4 }}>
         Present this barcode at checkout
       </Text>
     </Box>

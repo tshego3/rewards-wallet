@@ -60,6 +60,20 @@ rewards-wallet/
   .npmrc                   # save-exact=true
 ```
 
+## Lighthouse Testing
+
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/) is an open-source automated tool by Google that audits web pages for performance, accessibility, best practices, and SEO. It runs in Chrome DevTools (Audits tab) or via the command line.
+
+Run Lighthouse against the **production build**, not the dev server. The dev server serves unminified, unbundled modules (~12MB) which produces misleading performance scores.
+
+```bash
+npm run build
+npm run preview
+# Then run Lighthouse against http://localhost:4173/rewards-wallet/
+```
+
+The production build is ~155 KB gzipped initial load with code-split screen chunks loaded on demand.
+
 ## Deployment (GitHub Pages)
 
 ```bash

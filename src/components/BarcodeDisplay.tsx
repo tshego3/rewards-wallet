@@ -29,7 +29,7 @@ export function BarcodeDisplay({ value, format, height = 80, onClick }: BarcodeD
       });
     } catch {
       if (svgRef.current) {
-        svgRef.current.innerHTML = '';
+        svgRef.current.replaceChildren();
       }
     }
   }, [value, format, height]);

@@ -91,7 +91,7 @@ export function AddCardForm({ opened, onClose, onSave, initialData, title }: Add
       centered
       styles={{
         header: { backgroundColor: tokens.colors.surface, borderBottom: `1px solid ${tokens.colors.elevated}` },
-        body: { backgroundColor: tokens.colors.surface },
+        body: { backgroundColor: tokens.colors.surface, overflowY: 'auto', maxHeight: '70dvh' },
         content: { backgroundColor: tokens.colors.surface },
         title: { color: tokens.colors.primaryText, fontWeight: 600 },
         close: { color: tokens.colors.secondaryText },
@@ -129,18 +129,18 @@ export function AddCardForm({ opened, onClose, onSave, initialData, title }: Add
             onChange={(val) => setCategory((val as CardCategory) || 'retail')}
             styles={inputStyles}
           />
-          <TextInput
-            label="Points"
-            type="number"
-            value={points}
-            onChange={(e) => setPoints(e.currentTarget.value)}
-            styles={inputStyles}
-          />
           <ColorInput
             label="Card Color"
             value={color}
             onChange={setColor}
             swatches={DEFAULT_COLORS}
+            styles={inputStyles}
+          />
+          <TextInput
+            label="Points"
+            type="number"
+            value={points}
+            onChange={(e) => setPoints(e.currentTarget.value)}
             styles={inputStyles}
           />
           <Group justify="flex-end" mt="md">
