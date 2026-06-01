@@ -24,18 +24,14 @@ const FORMAT_OPTIONS: Array<{ value: BarcodeFormat; label: string }> = [
   { value: 'CODE128', label: 'Code 128' },
 ];
 
-const DEFAULT_COLORS = [
-  '#ef4444', '#f97316', '#eab308', '#22c55e',
-  '#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899',
-  '#6b7280', '#1C1C1C',
-];
+const DEFAULT_COLORS = tokens.cardAccents;
 
 export function AddCardForm({ opened, onClose, onSave, initialData, title }: AddCardFormProps) {
   const [name, setName] = useState('');
   const [barcode, setBarcode] = useState('');
   const [barcodeFormat, setBarcodeFormat] = useState<BarcodeFormat>('CODE128');
   const [category, setCategory] = useState<CardCategory>('retail');
-  const [color, setColor] = useState('#3b82f6');
+  const [color, setColor] = useState<string>(tokens.cardAccentDefault);
   const [points, setPoints] = useState('0');
 
   useEffect(() => {
@@ -51,7 +47,7 @@ export function AddCardForm({ opened, onClose, onSave, initialData, title }: Add
       setBarcode('');
       setBarcodeFormat('CODE128');
       setCategory('retail');
-      setColor('#3b82f6');
+      setColor(tokens.cardAccentDefault);
       setPoints('0');
     }
   }, [initialData, opened]);

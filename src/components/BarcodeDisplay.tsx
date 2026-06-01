@@ -21,8 +21,8 @@ export function BarcodeDisplay({ value, format, height = 80, onClick }: BarcodeD
         width: 2,
         height,
         displayValue: true,
-        background: '#FFFFFF',
-        lineColor: '#000000',
+        background: tokens.barcode.background,
+        lineColor: tokens.barcode.lineColor,
         margin: 16,
         fontSize: 14,
         font: 'Inter',
@@ -41,7 +41,7 @@ export function BarcodeDisplay({ value, format, height = 80, onClick }: BarcodeD
       tabIndex={onClick ? 0 : undefined}
       onKeyDown={onClick ? (e) => { if (e.key === 'Enter' || e.key === ' ') onClick(); } : undefined}
       style={{
-        backgroundColor: '#FFFFFF',
+        backgroundColor: tokens.barcode.background,
         borderRadius: tokens.radius.md,
         padding: tokens.spacing.md,
         cursor: onClick ? 'pointer' : 'default',

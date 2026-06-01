@@ -34,6 +34,16 @@ export const tokens = {
     lg: '24px',
     xl: '48px',
   },
+  barcode: {
+    background: '#FFFFFF',
+    lineColor: '#000000',
+  },
+  cardAccents: [
+    '#ef4444', '#f97316', '#eab308', '#22c55e',
+    '#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899',
+    '#6b7280', '#1C1C1C',
+  ],
+  cardAccentDefault: '#3b82f6',
 } as const;
 
 // Monolithic Clarity grayscale as a Mantine color tuple
