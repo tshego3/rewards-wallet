@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 import type { Plugin } from 'vite';
 
 function deferCssPlugin(): Plugin {
@@ -16,7 +17,21 @@ function deferCssPlugin(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [react(), deferCssPlugin()],
+  plugins: [
+    react(),
+    deferCssPlugin(),
+    VitePWA({
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'sw.ts',
+      outDir: 'dist',
+      injectRegister: false,
+      manifest: false,
+      injectManifest: {
+        rollupFormat: 'iife',
+      },
+    }),
+  ],
   base: '/rewards-wallet/',
   build: {
     outDir: 'dist',

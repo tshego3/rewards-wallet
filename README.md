@@ -41,8 +41,9 @@ npm run dev
 rewards-wallet/
   public/
     manifest.webmanifest   # PWA manifest (standalone, theme_color #131313)
-    sw.js                  # Service Worker (cache-first offline strategy)
-    icons/                 # App icons (192x192, 512x512)
+    favicon.svg            # Browser tab icon
+    logo.svg               # App logo
+    icons/                 # App icons (192x192, 512x512 in PNG + SVG)
   src/
     types/                 # LoyaltyCard, CardFormData, RouteState interfaces
     db/                    # IndexedDB CRUD operations (idb wrapper)
@@ -50,6 +51,7 @@ rewards-wallet/
     components/            # CardPreview, BarcodeDisplay, CategoryChip, AddCardForm, FullScreenBarcode
     screens/               # Dashboard, CardDetails, Search, Settings
     router.ts              # Hash-based client-side router
+    sw.ts                  # Service Worker source (Workbox precaching, built by VitePWA)
     App.tsx                # AppShell with responsive nav (bottom tabs / sidebar)
     main.tsx               # Entry point with MantineProvider + SW registration
     global.css             # Reduced-motion + base resets

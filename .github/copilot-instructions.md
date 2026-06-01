@@ -4,8 +4,8 @@ These rules are mandatory for all feature work, bug fixes, and refactors in this
 
 ## 1) Platform Identity
 
-1. Stack is TypeScript + Vite (pure PWA, no React/Vue/Angular frameworks).
-2. UI library is [Mantine](https://mantine.dev/) (Core, Hooks, and Spotlight).
+1. Stack is TypeScript + React + Vite (pure client-side PWA — no SSR, no framework router, no server runtime).
+2. UI library is [Mantine](https://mantine.dev/) (Core, Hooks, and Spotlight) which requires React.
 3. This is a client-side-only, offline-first PWA — no backend, no database server, no authentication server, no server-side APIs.
 4. All data persists locally on device via IndexedDB (using the `idb` wrapper library). Zero server calls.
 5. PWA features via Workbox Service Worker for offline-first caching and Web App Manifest for installability.
